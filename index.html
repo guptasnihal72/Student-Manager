@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Manager with Persistent Storage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4 max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-blue-600">Student Manager</h1>
+
+        <!-- Add Student Form -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Add New Student</h2>
+            <form id="student-form" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <input type="text" id="student-name" placeholder="Name" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                <input type="number" id="student-age" placeholder="Age" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" min="5" required />
+                <input type="text" id="student-grade" placeholder="Grade" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                <input type="email" id="student-email" placeholder="Email" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                <input type="text" id="student-phone" placeholder="Phone" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 col-span-1 md:col-span-3">Add Student</button>
+            </form>
+        </div>
+
+        <!-- Search Input -->
+        <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search students by name..."
+                class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+        </div>
+
+        <!-- Student List -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Student List</h2>
+            <div id="student-list" class="space-y-2">
+                <!-- Students will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Student Details Modal -->
+        <div id="student-details-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+                <h3 class="text-xl font-semibold mb-4">Student Details</h3>
+                <div id="student-details-content"></div>
+                <button id="close-modal" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
